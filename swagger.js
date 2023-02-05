@@ -2,10 +2,10 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'CSE 341 Contacts API',
-    description: 'Allows access to manage the contacts documents in the MogoDB database.',
+    title: 'CSE 341 Research API',
+    description: 'Allows access to manage the research documents in the MongoDB database.',
   },
-  host: 'rrcox-cse341.onrender.com',
+  host: 'cse341-rrcox-research.onrender.com',
   schemes: ['http','https'],
 };
 
