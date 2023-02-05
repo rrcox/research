@@ -1,0 +1,33 @@
+###
+GET https://rrcox-cse341.onrender.com/contacts
+
+###
+GET https://rrcox-cse341.onrender.com/contacts/63c28a525703427450a5def2
+
+###
+POST https://rrcox-cse341.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Fred",
+    "lastName":"Smith",
+    "email":"fred@smith.com",
+    "favoriteColor":"brown",
+    "birthday":"04/01/2001"
+}
+
+###
+PUT https://rrcox-cse341.onrender.com/contacts/63c2891a5703427450a5def0 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Kelly",
+    "lastName":"Wiley",
+    "email":"kellywiley@gmail.com",
+    "favoriteColor":"purple",
+    "birthday":"2001-01-01"
+}
+
+###
+DELETE https://rrcox-cse341.onrender.com/contacts/63d5c94dba50dfa0b752c458 HTTP/1.1
+content-type: application/json
