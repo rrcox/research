@@ -10,6 +10,22 @@ const getAll = async (req, res, next) => {
     res.status(200).json(documents);
 };
 
+const createSource = async(req, res, next) => {
+    const source = {
+        title: req.body.title
+    }
+    const db = await client.getDb().db('research');
+    const collection = db.collection('sources');
+    const response = await collection.insertOne(source);
+    
+    if (response.acknowledged) {
+        res.status(201).json(response);
+    } else {
+        res.status(500).json(response.error);
+    }
+}
+    
+    
 // const getOne = async (req, res, next) => {
 //     const userId = new ObjectId(req.params.id);
     
@@ -77,4 +93,4 @@ const getAll = async (req, res, next) => {
 // };
 
 // module.exports = { getAll, getOne, createContact, updateContact, deleteContact };
-module.exports = { getAll };
+module.exports = { getAll, createSource };
