@@ -1,6 +1,6 @@
 const client = require('../model/connect');
 const ObjectId = require('mongodb').ObjectId;
-const { body, validationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
 
 const getAll = async (req, res, next) => {
     const db = await client.getDb().db('research');

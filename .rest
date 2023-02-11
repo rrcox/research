@@ -8,7 +8,7 @@ POST https://cse341-rrcox-research.onrender.com/sources HTTP/1.1
 content-type: application/json
 
 {
-    "title":"Fred"
+    "title":"really long title"
 }
 
 ###
