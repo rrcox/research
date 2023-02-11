@@ -32,6 +32,8 @@ const start = async () => {
     app.listen(port, () => {
         if (connected) {
             console.log(`Running on port ${port}`);
+            // console.log(`DB_USERNAME: ${process.env.DB_USERNAME}`);
+            // console.log(`DB_PASSWORD: ${process.env.DB_PASSWORD}`);
         } else {
             console.log(`error - not connected`);
         }
