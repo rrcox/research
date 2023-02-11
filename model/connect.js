@@ -5,10 +5,7 @@ let _db;
 
 async function connect() {
     dotenv.config();
-    console.log(`Connect DB_USERNAME: ${process.env.DB_USERNAME}`);
-    console.log(`connect DB_PASSWORD: ${process.env.DB_PASSWORD}`);
     const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.fnbzrec.mongodb.net/?retryWrites=true&w=majority`;
-    // const uri = `mongodb+srv://admin:bupoMond0@cluster0.fnbzrec.mongodb.net/?retryWrites=true&w=majority`;
     const client = new MongoClient(uri);
     try {
         await client.connect();
