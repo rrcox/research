@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 const db = require('./model/connect');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
-// const { body } = require('express-validator');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const swaggerAutogen = require('swagger-autogen')();

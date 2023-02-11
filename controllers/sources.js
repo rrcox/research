@@ -10,7 +10,7 @@ const getAll = async (req, res, next) => {
     res.status(200).json(documents);
 };
 
-const createSource = async(req, res, next) => {
+const createSource = async(req, res) => {
     const source = {
         title: req.body.title
     }
