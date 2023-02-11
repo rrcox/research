@@ -25,6 +25,37 @@ const createSource = async(req, res, next) => {
     }
 }
     
+const updateSource = async (req, res) => {
+    const userId = new ObjectId(req.params.id);  
+    const source = {
+        title: req.body.title
+    };
+
+    const db = await client.getDb().db('research');
+    const collection = db.collection('sources');
+    const response = await collection.replaceOne({ _id: userId }, source);
+
+    if (response.modifiedCount > 0) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error);
+    }
+};
+
+const deleteSource = async (req, res) => {
+    const userId = new ObjectId(req.params.id);
+
+    const db = await client.getDb().db('research');
+    const collection = db.collection('sources');
+    const response = await collection.remove({ _id: userId }, true);
+
+    if (response.deletedCount > 0) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error);
+    }
+};
+
     
 // const getOne = async (req, res, next) => {
 //     const userId = new ObjectId(req.params.id);
@@ -93,4 +124,4 @@ const createSource = async(req, res, next) => {
 // };
 
 // module.exports = { getAll, getOne, createContact, updateContact, deleteContact };
-module.exports = { getAll, createSource };
+module.exports = { getAll, createSource, updateSource, deleteSource };
