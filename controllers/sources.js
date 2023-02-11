@@ -1,5 +1,6 @@
 const client = require('../model/connect');
 const ObjectId = require('mongodb').ObjectId;
+const { body, validationResult } = require('express-validator');
 
 const getAll = async (req, res, next) => {
     const db = await client.getDb().db('research');
@@ -11,6 +12,10 @@ const getAll = async (req, res, next) => {
 };
 
 const createSource = async(req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
     const source = {
         title: req.body.title
     }
