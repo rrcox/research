@@ -19,6 +19,7 @@ const createSource = async(req, res) => {
     const source = {
         title: req.body.title,
         publish_date: req.body.publish_date,
+        authors: req.body.authors,
         doi: req.body.doi,
         abstract: req.body.abstract,
         apa_citation: req.body.apa_citation,
