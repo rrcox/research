@@ -17,7 +17,13 @@ const createSource = async(req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
     const source = {
-        title: req.body.title
+        title: req.body.title,
+        publish_date: req.body.publish_date,
+        doi: req.body.doi,
+        abstract: req.body.abstract,
+        apa_citation: req.body.apa_citation,
+        apa_reference: req.body.apa_reference,
+        apa_summary: req.body.apa_summary
     }
     const db = await client.getDb().db('research');
     const collection = db.collection('sources');
